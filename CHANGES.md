@@ -1,3 +1,5 @@
+- Add unit testables (useful for functions with side-effects)
+
 ### 0.6.0 (2016-06-28)
 
 - Add int32,int64,float testables (#71, @hcarty)

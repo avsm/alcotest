@@ -521,6 +521,14 @@ end
 
 type 'a testable = (module TESTABLE with type t = 'a)
 
+let unit =
+  let module M = struct
+    type t = unit
+    let pp fmt () = Format.pp_print_string fmt "()"
+    let equal () () = true
+  end in
+  (module M: TESTABLE with type t = M.t)
+
 let int =
   let module M = struct
     type t = int
