@@ -533,7 +533,7 @@ let int32 =
   let module M = struct
     type t = int32
     let pp fmt i = Format.pp_print_string fmt (Int32.to_string i)
-    let equal = ( = )
+    let equal = Int32.equal
   end in
   (module M: TESTABLE with type t = M.t)
 
@@ -541,7 +541,7 @@ let int64 =
   let module M = struct
     type t = int64
     let pp fmt x = Format.pp_print_string fmt (Int64.to_string x)
-    let equal = ( = )
+    let equal = Int64.equal
   end in
   (module M: TESTABLE with type t = M.t)
 
@@ -557,7 +557,7 @@ let char =
   let module M = struct
     type t = char
     let pp = Format.pp_print_char
-    let equal = (=)
+    let equal = Char.equal
   end in
   (module M: TESTABLE with type t = M.t)
 
@@ -565,7 +565,7 @@ let string =
   let module M = struct
     type t = string
     let pp = Format.pp_print_string
-    let equal = (=)
+    let equal = String.equal
   end in
   (module M: TESTABLE with type t = M.t)
 
